@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from mysite.views import hello, current_datetime, hours_ahead
+from mysite.views import index, hello, current_datetime, hours_ahead
 
 # from django.conf.urls.defaults import *
 
@@ -8,6 +8,8 @@ from mysite.views import hello, current_datetime, hours_ahead
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', index),
+    url(r'^index/$', index),
     url(r'^hello/$', hello),
     url(r'^time/$', current_datetime),
     url(r'^time/plus/(\d{1,2})/$', hours_ahead),

@@ -3,11 +3,19 @@ from django.template import Template, Context
 from django.http import HttpResponse
 import datetime
 
+def index(request):
+    a = "<li>/hello = browser data\n"
+    b = "<li>/time = UTC time now\n"
+    c = "<li>/time/plus/offset/ = UTC time offset hours\n"
+    d = "<li>/ = this page\n"
+    return HttpResponse('<ul>'+a+b+c+d+'</ul>')
+
 def hello(request):
-    message = "Your browser is %s and IP %s"
+    message = "Your browser is %s and IP %s %s"
     ua = request.META['HTTP_USER_AGENT']
     ub = request.META['REMOTE_ADDR']
-    return HttpResponse(message % (ua, ub))
+    uc = "<p><a href='/index/'>return_main</a>"
+    return HttpResponse(message % (ua, ub, uc))
 
 def current_datetime(request):
     now = datetime.datetime.now()
@@ -21,5 +29,6 @@ def hours_ahead(request, offset):
     except ValueError:
         raise Http404()
     dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
-    html = "<html><body>Local time %s UTC + %s h.</body></html>" % (dt, offset)
+    uc = "<p><a href='/index/'>return_main</a>"
+    html = "<html><body>Local time %s UTC + %s h. %s</body></html>" % (dt, offset, uc)
     return HttpResponse(html)

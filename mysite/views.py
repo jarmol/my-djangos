@@ -14,8 +14,10 @@ def hello(request):
     message = "Your browser is %s and IP %s %s"
     ua = request.META['HTTP_USER_AGENT']
     ub = request.META['REMOTE_ADDR']
-    uc = "<p><a href='/index/'>return_main</a>"
-    return HttpResponse(message % (ua, ub, uc))
+
+    t = get_template('your_system.html')
+    c = Context({'your_browser': ua, 'your_address': ub})
+    return HttpResponse(t.render(c))
 
 def current_datetime(request):
     now = datetime.datetime.now()

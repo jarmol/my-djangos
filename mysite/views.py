@@ -4,11 +4,11 @@ from django.http import HttpResponse
 import datetime
 
 def index(request):
-    a = "<li>/hello = browser data\n"
-    b = "<li>/time = UTC time now\n"
-    c = "<li>/time/plus/offset/ = UTC time offset hours\n"
-    d = "<li>/ = this page\n"
-    return HttpResponse('<ul>'+a+b+c+d+'</ul>')
+    a = "<li><a href='/hello'>browser data</a>"
+    b = "<li><a href='/time'>UTC time now</a>"
+    c = "<li><a href='/time/plus/3'>UTC +3 hours</a>"
+
+    return HttpResponse('<ul>'+a+b+c+'</ul>')
 
 def hello(request):
     message = "Your browser is %s and IP %s %s"

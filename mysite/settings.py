@@ -3,7 +3,7 @@ import os
 # Django settings for mysite project.
 SETTINGS_DIR = os.path.dirname(__file__)
 PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
-DATABASE_PATH = os.path.join(PROJECT_PATH, 'rango.db')
+DATABASE_PATH = os.path.join(PROJECT_PATH, 'voted.db')
 
 
 DEBUG = True
@@ -41,7 +41,7 @@ TIME_ZONE = 'Finland/Helsinki'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fi'
 
 SITE_ID = 1
 
@@ -105,4 +105,5 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'mysite.polls'
 )

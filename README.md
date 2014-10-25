@@ -10,8 +10,10 @@ Learning Python Django with Debian 6 Linux (Squeeze, old stable)
 
 Run example
 
-@nc10:~/mydjangos/my-djangos$ cd mysite/  
-@nc10:~/mydjangos/my-djangos/mysite$ ./manage.py runserver  
+@nc10:~/mydjangos/my-djangos  
+$ cd mysite/  
+@nc10:~/mydjangos/my-djangos/mysite  
+$ ./manage.py runserver  
 Validating models...  
 0 errors found
 
@@ -29,5 +31,5 @@ Quit the server with CONTROL-C.
 [17/Oct/2014 21:25:08] "GET /time/plus/3/ HTTP/1.1" 200 111  
 [17/Oct/2014 21:26:21] "GET /time/plus/2/ HTTP/1.1" 200 111  
 [17/Oct/2014 21:26:26] "GET /index/ HTTP/1.1" 200 125  
-^C@nc10:~/mydjangos/my-djangos/mysite$ 
+^C@nc10:~/mydjangos/my-djangos/mysite$  
 // Server stopped using Ctrl-C
